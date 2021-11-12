@@ -6,4 +6,8 @@ export default class TennisGame {
   player1Scores() {
     return new TennisGame('15-love');
   }
+
+  player2Scores() {
+    return new TennisGame('love-15');
+  }
 }

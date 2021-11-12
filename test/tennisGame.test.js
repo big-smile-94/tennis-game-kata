@@ -13,5 +13,10 @@ describe('Tennis Game Kata', () => {
       const tennis = new TennisGame('love-love').player1Scores();
       expect(tennis.score).toBe('15-love');
     });
+
+    test('if player two scores the score should be love-15', () => {
+      const tennis = new TennisGame('love-love').player2Scores();
+      expect(tennis.score).toBe('love-15');
+    });
   });
 });
