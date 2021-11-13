@@ -29,6 +29,31 @@ const scenarios = [
     game: TennisGame.init().player1Scores().player2Scores(),
     expectedScore: '15-all',
   },
+  {
+    description: generateDescription(0, 2, 'love-30'),
+    game: TennisGame.init().player2Scores().player2Scores(),
+    expectedScore: 'love-30',
+  },
+  {
+    description: generateDescription(3, 0, '40-love'),
+    game: TennisGame.init().player1Scores().player1Scores().player1Scores(),
+    expectedScore: '40-love',
+  },
+  {
+    description: generateDescription(2, 1, '30-15'),
+    game: TennisGame.init().player1Scores().player1Scores().player2Scores(),
+    expectedScore: '30-15',
+  },
+  {
+    description: generateDescription(1, 2, '15-30'),
+    game: TennisGame.init().player2Scores().player1Scores().player2Scores(),
+    expectedScore: '15-30',
+  },
+  {
+    description: generateDescription(0, 3, 'love-40'),
+    game: TennisGame.init().player2Scores().player2Scores().player2Scores(),
+    expectedScore: 'love-40',
+  },
 ];
 
 describe('Tennis Game Kata', () => {
