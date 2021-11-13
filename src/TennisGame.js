@@ -3,7 +3,9 @@ export default class TennisGame {
     this.score = score;
   }
 
-  static init = () => new TennisGame('love-all');
+  static start = () => new TennisGame('love-all');
+
+  // static init = (score) => new TennisGame(score);
 
   player1Scores = () =>
     gameState.find((g) => g.score === this.score).nextState.player1;
@@ -16,6 +18,8 @@ export default class TennisGame {
   endGame = (Player) => `${Player} has won the game already!`;
 }
 
+//TODO: HA - as of now I can't move the gameState to another file and import it here because I will get a circular dependency as both classes will reference each other.
+//TODO: HA - Tried the init function to get a new TennisGame and also used the new keyword both don't work
 const gameState = [
   {
     score: 'love-all',
