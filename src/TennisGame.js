@@ -15,6 +15,10 @@ export default class TennisGame {
     return gameState.find((g) => g.score === this.score).nextState.player2;
   }
 
+  getScore() {
+    return this.score;
+  }
+
   endGame(Player) {
     return `${Player} has won the game already!`;
   }
