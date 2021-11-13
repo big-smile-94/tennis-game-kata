@@ -3,25 +3,17 @@ export default class TennisGame {
     this.score = score;
   }
 
-  static init = () => {
-    return new TennisGame('love-all');
-  };
+  static init = () => new TennisGame('love-all');
 
-  player1Scores() {
-    return gameState.find((g) => g.score === this.score).nextState.player1;
-  }
+  player1Scores = () =>
+    gameState.find((g) => g.score === this.score).nextState.player1;
 
-  player2Scores() {
-    return gameState.find((g) => g.score === this.score).nextState.player2;
-  }
+  player2Scores = () =>
+    gameState.find((g) => g.score === this.score).nextState.player2;
 
-  getScore() {
-    return this.score;
-  }
+  getScore = () => this.score;
 
-  endGame(Player) {
-    return `${Player} has won the game already!`;
-  }
+  endGame = (Player) => `${Player} has won the game already!`;
 }
 
 const gameState = [
