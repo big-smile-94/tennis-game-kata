@@ -174,6 +174,26 @@ const scenarios = [
       .player2Scores().score,
     expectedScore: '2 wins',
   },
+  {
+    description: getDescription(5, 0, 'Player1 has won the game already!'),
+    actualScore: TennisGame.init()
+      .player1Scores()
+      .player1Scores()
+      .player1Scores()
+      .player1Scores()
+      .player1Scores(),
+    expectedScore: 'Player1 has won the game already!',
+  },
+  {
+    description: getDescription(0, 5, 'Player2 has won the game already!'),
+    actualScore: TennisGame.init()
+      .player2Scores()
+      .player2Scores()
+      .player2Scores()
+      .player2Scores()
+      .player2Scores(),
+    expectedScore: 'Player2 has won the game already!',
+  },
 ];
 
 describe('Tennis Game Kata', () => {

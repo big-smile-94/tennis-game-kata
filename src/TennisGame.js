@@ -14,6 +14,10 @@ export default class TennisGame {
   player2Scores() {
     return gameState.find((g) => g.score === this.score).nextState.player2;
   }
+
+  endGame(Player) {
+    return `${Player} has won the game already!`;
+  }
 }
 
 const gameState = [
@@ -141,6 +145,20 @@ const gameState = [
     nextState: {
       player1: new TennisGame('deuce'),
       player2: new TennisGame('2 wins'),
+    },
+  },
+  {
+    score: '1 wins',
+    nextState: {
+      player1: new TennisGame('1 wins').endGame('Player1'),
+      player2: new TennisGame('deuce').endGame('Player1'),
+    },
+  },
+  {
+    score: '2 wins',
+    nextState: {
+      player1: new TennisGame('deuce').endGame('Player2'),
+      player2: new TennisGame('2 wins').endGame('Player2'),
     },
   },
 ];
