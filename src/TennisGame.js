@@ -3,6 +3,10 @@ export default class TennisGame {
     this.score = score;
   }
 
+  static init = () => {
+    return new TennisGame('love-all');
+  };
+
   player1Scores() {
     return gameState.find((g) => g.score === this.score).nextState.player1;
   }
@@ -18,6 +22,13 @@ const gameState = [
     nextState: {
       player1: new TennisGame('15-love'),
       player2: new TennisGame('love-15'),
+    },
+  },
+  {
+    score: '15-love',
+    nextState: {
+      player1: new TennisGame('30-love'),
+      player2: new TennisGame('15-all'),
     },
   },
 ];
