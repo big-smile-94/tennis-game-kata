@@ -87,4 +87,25 @@ const gameState = [
       player2: new TennisGame('2 wins'),
     },
   },
+  {
+    score: '40-15',
+    nextState: {
+      player1: new TennisGame('1 wins'),
+      player2: new TennisGame('40-30'),
+    },
+  },
+  {
+    score: '30-all',
+    nextState: {
+      player1: new TennisGame('40-30'),
+      player2: new TennisGame('30-40'),
+    },
+  },
+  {
+    score: '15-40',
+    nextState: {
+      player1: new TennisGame('30-40'),
+      player2: new TennisGame('2 wins'),
+    },
+  },
 ];
