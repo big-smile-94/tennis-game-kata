@@ -31,4 +31,11 @@ const gameState = [
       player2: new TennisGame('15-all'),
     },
   },
+  {
+    score: 'love-15',
+    nextState: {
+      player1: new TennisGame('15-all'),
+      player2: new TennisGame('love-30'),
+    },
+  },
 ];
